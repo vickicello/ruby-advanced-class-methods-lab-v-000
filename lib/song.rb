@@ -42,5 +42,18 @@ class Song
     end
   end
 
+  def self.alphabetical
+    @@all.sort_by { |song| song.name }
+  end
+
+  def self.new_from_filename(filename)
+    song = Song.new
+    file = filename.chomp(".mp3")
+    array = file.splir(" - ")
+    song.artist_name = array[0]
+    song.name = array[1]
+    return song
+  end
+
 
 end
