@@ -54,7 +54,7 @@ class Song
     song.name = array[1]
     return song
   end
-  
+
   def self.create_from_filename(filename)
     song = Song.create
     file = filename.chomp(".mp3")
@@ -64,6 +64,8 @@ class Song
     return song
   end
 
-
+  def self.destroy_all
+    @@all.clear
+  end
 
 end
